@@ -1,0 +1,17 @@
+This was a quick Ruby script to help a vendor open our Apache Common Log files.
+
+The script uses the ApacheLogRegEx gem - install it as follows:
+
+gem install apachelogregex
+
+
+Then, edit the path on line 10 to point to the directory with your plain-text Common Log formatted log files.  Note - you probably want to make copies of these before running the script and run the script on the copies.
+
+The script will run dos2unix on the files before converting.  You can use Homebrew to install this if you don't have it on your system, or comment out this command if you don't need this additional conversion.
+
+Finally, navigate to the directory that contains the script and run it:
+
+ruby convert_standard_log_to_csv.rb
+
+
+If your Apache logging format varies from the conventional format, edit the format on line 42.
